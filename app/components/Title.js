@@ -1,8 +1,12 @@
 import React from "react";
-import { Text, StyleSheet } from "react-native";
+import { Text, View, StyleSheet } from "react-native";
 import colors from "../constants/colors";
 const Title = (props) => {
-  return <Text style={styles.title} {...props}></Text>;
+  return (
+    <View style={styles.titleContainer}>
+      <Text style={styles.title} {...props}></Text>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
@@ -10,6 +14,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: colors.secondary,
     fontWeight: "bold",
+  },
+  titleContainer: {
+    alignItems: "flex-start",
+    marginBottom: 10,
   },
 });
 

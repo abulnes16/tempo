@@ -1,9 +1,9 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import Logo from "./app/components/Logo";
 import SearchWeather from "./app/components/SearchWeather";
 import Weather from "./app/components/Weather";
+import Forecast from "./app/components/Forecast";
 
 export default function App() {
   return (
@@ -11,6 +11,7 @@ export default function App() {
       <Logo />
       <SearchWeather />
       <Weather />
+      <Forecast />
     </View>
   );
 }

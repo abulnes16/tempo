@@ -14,11 +14,11 @@ const WeatherItem = () => {
         </View>
       </View>
       <View style={styles.weatherData}>
-        <View>
+        <View style={styles.dataContainer}>
           <Icon name="droplet" type="feather" color={colors.blue} />
           <Text style={styles.text}>Humedad 30%</Text>
         </View>
-        <View>
+        <View style={styles.dataContainer}>
           <Icon name="air" type="entypo" color={colors.primary} />
           <Text style={styles.text}>Viento 3.6 m/s</Text>
         </View>
@@ -29,11 +29,11 @@ const WeatherItem = () => {
 
 const styles = StyleSheet.create({
   card: {
-    width: '100%',
+    width: "100%",
     backgroundColor: "white",
     paddingVertical: 25,
     paddingHorizontal: 20,
-    elevation: 2,
+    elevation: 3,
     borderRadius: 20,
     shadowColor: "#000",
     shadowOffset: { width: 0, height: 3 },
@@ -59,8 +59,14 @@ const styles = StyleSheet.create({
     justifyContent: "space-evenly",
   },
 
+  dataContainer: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: 'center',
+  },
+
   text: {
-    marginTop: 8,
+    marginLeft: 5,
   },
 });
 
