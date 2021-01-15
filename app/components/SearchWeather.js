@@ -6,11 +6,15 @@ import {
   TouchableOpacity,
   StyleSheet,
 } from "react-native";
+import colors from "../constants/colors";
+
+import { Icon } from "react-native-elements";
 
 const SearchWeather = () => {
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
+        <Icon name="search" color={colors.primary} />
         <TextInput placeholder="Nombre de ciudad" />
       </View>
       <TouchableOpacity style={styles.btn}>
@@ -29,6 +33,8 @@ const styles = StyleSheet.create({
 
   inputContainer: {
     width: "60%",
+    flexDirection: "row",
+    alignItems: "center",
     backgroundColor: "white",
     marginRight: 25,
     paddingVertical: 7,
@@ -44,7 +50,7 @@ const styles = StyleSheet.create({
   btn: {
     paddingHorizontal: 15,
     paddingVertical: 7,
-    backgroundColor: "#22C1C3",
+    backgroundColor: colors.primary,
     borderRadius: 20,
   },
 
