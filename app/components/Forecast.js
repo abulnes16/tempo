@@ -13,7 +13,7 @@ const Forecast = ({ forecast }) => {
         horizontal
       >
         {forecast.daily.map((daily) => (
-          <ForcastItem key={daily.weather.id} data={daily} />
+          <ForcastItem key={daily.dt} data={daily} />
         ))}
       </ScrollView>
     </View>

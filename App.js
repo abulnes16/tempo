@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, Text, View, ActivityIndicator } from "react-native";
+import { StyleSheet, View, Alert } from "react-native";
 import Logo from "./app/components/Logo";
 import SearchWeather from "./app/components/SearchWeather";
 import Weather from "./app/components/Weather";
@@ -12,32 +12,38 @@ export default function App() {
   const [forecast, setForecast] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const getWeather = async () => {
-      const query = "q=tegucigalpa";
+  const getWeather = async (cityName) => {
+    setLoading(true);
+    const query = `q=${cityName || "tegucigalpa"}`;
+    try {
       const weather = await getData("weather", query);
       const { lon, lat } = weather.coord;
       const queryForecast = `lat=${lat}&lon=${lon}&exclude=hourly,minutely`;
       const forecast = await getData("onecall", queryForecast);
-      console.log(forecast);
       setCurrentWeather(weather);
       setForecast(forecast);
       setLoading(false);
-    };
+    } catch (error) {
+      Alert.alert("Loading error", "We couldn't retrieve the current weather");
+    }
+  };
 
+  useEffect(() => {
     getWeather();
   }, []);
-
-  if (loading) {
-    return <Loader />;
-  }
 
   return (
     <View style={styles.container}>
       <Logo />
-      <SearchWeather />
-      <Weather weather={currentWeather} />
-      <Forecast forecast={forecast} />
+      <SearchWeather getWeather={getWeather} />
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          <Weather weather={currentWeather} />
+          <Forecast forecast={forecast} />
+        </>
+      )}
     </View>
   );
 }

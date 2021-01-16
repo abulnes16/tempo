@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   TextInput,
@@ -10,14 +10,25 @@ import colors from "../constants/colors";
 
 import { Icon } from "react-native-elements";
 
-const SearchWeather = () => {
+const SearchWeather = ({ getWeather }) => {
+  const [cityName, setCityName] = useState("");
+
+  const searchCity = () => {
+    getWeather(cityName);
+    setCityName("");
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.inputContainer}>
         <Icon name="search" color={colors.primary} />
-        <TextInput placeholder="City name" />
+        <TextInput
+          value={cityName}
+          onChangeText={(text) => setCityName(text)}
+          placeholder="City name"
+        />
       </View>
-      <TouchableOpacity style={styles.btn}>
+      <TouchableOpacity onPress={searchCity} style={styles.btn}>
         <Text style={styles.text}>Search</Text>
       </TouchableOpacity>
     </View>
