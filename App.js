@@ -13,6 +13,14 @@ export default function App() {
   const [loading, setLoading] = useState(true);
 
   const getWeather = async (cityName) => {
+    if (cityName === "") {
+      Alert.alert(
+        "Missing city name",
+        "You need to input a city name for searching it"
+      );
+      return;
+    }
+
     setLoading(true);
     const query = `q=${cityName || "tegucigalpa"}`;
     try {

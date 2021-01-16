@@ -12,7 +12,7 @@ async function getData(resource, query) {
       throw new Error(response);
     }
   } catch (error) {
-    console.log(error);
+    console.error(error);
     return error.message;
   }
 }
