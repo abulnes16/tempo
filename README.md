@@ -5,6 +5,7 @@
 An application for consult the weather of you're city
 
 **Preview**
+<br>
 <img align="center" width="300" src="assets/img/tempo.jpeg">
 
 This app is built with React Native v0.63 and Expo
