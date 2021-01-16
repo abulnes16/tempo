@@ -15,10 +15,10 @@ const SearchWeather = () => {
     <View style={styles.container}>
       <View style={styles.inputContainer}>
         <Icon name="search" color={colors.primary} />
-        <TextInput placeholder="Nombre de ciudad" />
+        <TextInput placeholder="City name" />
       </View>
       <TouchableOpacity style={styles.btn}>
-        <Text style={styles.text}>Buscar</Text>
+        <Text style={styles.text}>Search</Text>
       </TouchableOpacity>
     </View>
   );

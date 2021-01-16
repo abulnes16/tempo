@@ -1,5 +1,12 @@
+import moment from "moment";
+
 function convertTemperature(temperature) {
-  return temperature - 273.15;
+  return Math.floor(temperature - 273.15);
 }
 
-export { convertTemperature };
+function getDayOfTheWeek(date) {
+  const day = moment.unix(date).format("dddd");
+  return day;
+}
+
+export { convertTemperature, getDayOfTheWeek };

@@ -2,13 +2,16 @@ import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Icon } from "react-native-elements";
 import colors from "../constants/colors";
+import { convertTemperature, getDayOfTheWeek } from "../modules/helper";
 
-const ForcastItem = () => {
+const ForcastItem = ({ data }) => {
   return (
     <View style={styles.card}>
       <Icon name="air" type="entypo" color={colors.primary} />
-      <Text style={styles.day}>Lu</Text>
-      <Text style={styles.temperature}>25°C</Text>
+      <Text style={styles.day}>{getDayOfTheWeek(data.dt)}</Text>
+      <Text style={styles.temperature}>
+        {convertTemperature(data.temp.day)}°C
+      </Text>
     </View>
   );
 };

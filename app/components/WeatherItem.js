@@ -5,7 +5,6 @@ import colors from "../constants/colors";
 import { convertTemperature } from "../modules/helper";
 
 const WeatherItem = ({ weather }) => {
-  console.log(weather);
   return (
     <View style={styles.card}>
       <View style={styles.weatherInfo}>
@@ -22,11 +21,11 @@ const WeatherItem = ({ weather }) => {
       <View style={styles.weatherData}>
         <View style={styles.dataContainer}>
           <Icon name="droplet" type="feather" color={colors.blue} />
-          <Text style={styles.text}>Humedad {weather.main.humidity}%</Text>
+          <Text style={styles.text}>Humidity {weather.main.humidity}%</Text>
         </View>
         <View style={styles.dataContainer}>
           <Icon name="air" type="entypo" color={colors.primary} />
-          <Text style={styles.text}>Viento {weather.wind.speed} m/s</Text>
+          <Text style={styles.text}>Wind {weather.wind.speed} m/s</Text>
         </View>
       </View>
     </View>

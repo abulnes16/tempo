@@ -8,7 +8,7 @@ import globalStyles from "../styles/globalStyles";
 const Weather = ({ weather }) => {
   return (
     <View style={globalStyles.container}>
-      <Title>Tiempo actual</Title>
+      <Title>Current weather</Title>
       <View style={styles.weatherContainer}>
         <WeatherItem weather={weather} />
       </View>

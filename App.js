@@ -9,15 +9,22 @@ import Loader from "./app/components/Loader";
 
 export default function App() {
   const [currentWeather, setCurrentWeather] = useState([]);
+  const [forecast, setForecast] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const getWeather = async () => {
       const query = "q=tegucigalpa";
       const weather = await getData("weather", query);
+      const { lon, lat } = weather.coord;
+      const queryForecast = `lat=${lat}&lon=${lon}&exclude=hourly,minutely`;
+      const forecast = await getData("onecall", queryForecast);
+      console.log(forecast);
       setCurrentWeather(weather);
+      setForecast(forecast);
       setLoading(false);
     };
+
     getWeather();
   }, []);
 
@@ -30,7 +37,7 @@ export default function App() {
       <Logo />
       <SearchWeather />
       <Weather weather={currentWeather} />
-      <Forecast />
+      <Forecast forecast={forecast} />
     </View>
   );
 }

@@ -3,20 +3,18 @@ import { View, ScrollView, Text, StyleSheet } from "react-native";
 import Title from "./Title";
 import globalStyles from "../styles/globalStyles";
 import ForcastItem from "./ForcastItem";
-const Forecast = () => {
+const Forecast = ({ forecast }) => {
   return (
     <View style={globalStyles.container}>
-      <Title>Pronostico semanal</Title>
+      <Title>Weekly Forecast</Title>
       <ScrollView
         style={styles.scroll}
         contentContainerStyle={styles.innerContainer}
         horizontal
       >
-        <ForcastItem />
-        <ForcastItem />
-        <ForcastItem />
-        <ForcastItem />
-        <ForcastItem />
+        {forecast.daily.map((daily) => (
+          <ForcastItem key={daily.weather.id} data={daily} />
+        ))}
       </ScrollView>
     </View>
   );
