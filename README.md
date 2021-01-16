@@ -1,5 +1,6 @@
 
 <img src="assets/img/tempo-logo-bg.png" height="150" align="right"/>
+
 ## Tempo App
 
 An application for consult the weather of you're city
