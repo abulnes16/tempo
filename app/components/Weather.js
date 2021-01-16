@@ -5,12 +5,12 @@ import WeatherItem from "./WeatherItem";
 
 import globalStyles from "../styles/globalStyles";
 
-const Weather = () => {
+const Weather = ({ weather }) => {
   return (
     <View style={globalStyles.container}>
       <Title>Tiempo actual</Title>
       <View style={styles.weatherContainer}>
-        <WeatherItem />
+        <WeatherItem weather={weather} />
       </View>
     </View>
   );

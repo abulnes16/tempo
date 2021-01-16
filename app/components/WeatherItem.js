@@ -2,25 +2,31 @@ import React from "react";
 import { Icon } from "react-native-elements";
 import { View, Text, StyleSheet } from "react-native";
 import colors from "../constants/colors";
+import { convertTemperature } from "../modules/helper";
 
-const WeatherItem = () => {
+const WeatherItem = ({ weather }) => {
+  console.log(weather);
   return (
     <View style={styles.card}>
       <View style={styles.weatherInfo}>
         <Icon name="wb-sunny" size={70} color={colors.secondary} />
-        <Text style={styles.weatherTemperature}>20 °C</Text>
+        <Text style={styles.weatherTemperature}>
+          {convertTemperature(weather.main.temp)} °C
+        </Text>
         <View>
-          <Text style={styles.weatherLocation}>Tegucigalpa, HN</Text>
+          <Text style={styles.weatherLocation}>
+            {weather.name} {weather.sys.country}
+          </Text>
         </View>
       </View>
       <View style={styles.weatherData}>
         <View style={styles.dataContainer}>
           <Icon name="droplet" type="feather" color={colors.blue} />
-          <Text style={styles.text}>Humedad 30%</Text>
+          <Text style={styles.text}>Humedad {weather.main.humidity}%</Text>
         </View>
         <View style={styles.dataContainer}>
           <Icon name="air" type="entypo" color={colors.primary} />
-          <Text style={styles.text}>Viento 3.6 m/s</Text>
+          <Text style={styles.text}>Viento {weather.wind.speed} m/s</Text>
         </View>
       </View>
     </View>
@@ -62,11 +68,12 @@ const styles = StyleSheet.create({
   dataContainer: {
     flexDirection: "row",
     justifyContent: "space-between",
-    alignItems: 'center',
+    alignItems: "center",
   },
 
   text: {
     marginLeft: 5,
+    fontSize: 12,
   },
 });
 
