@@ -1,7 +1,11 @@
+/* ForecastItem Component
+   Render the forecast data of the current city
+   props:
+    - data: The daily forecast data
+*/
+
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
-import { Icon } from "react-native-elements";
-import colors from "../constants/colors";
 import {
   convertTemperature,
   getDayOfTheWeek,

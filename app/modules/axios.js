@@ -1,3 +1,7 @@
+/* Axios module 
+  Configures the axios library with the base API URL.
+*/
+
 import axios from "axios";
 
 const instance = axios.create({

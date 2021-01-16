@@ -1,3 +1,7 @@
+/* Logo component
+  Renders the logo of the app
+*/
+
 import React from "react";
 import { View, Image, Text, StyleSheet } from "react-native";
 import colors from "../constants/colors";

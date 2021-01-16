@@ -1,3 +1,9 @@
+/* Search Weather Component 
+  Manage the city filter of the app. 
+  props: 
+    - getWeather: Function that elevates the city name to the App Component
+*/
+
 import React, { useState } from "react";
 import {
   View,

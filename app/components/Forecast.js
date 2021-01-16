@@ -1,8 +1,19 @@
+/* Forecast Component 
+   Renders the Forecast section of the app
+   props: 
+    - forecast: An array of daily forecast of the current city
+*/
+
 import React from "react";
-import { View, ScrollView, Text, StyleSheet } from "react-native";
+import { View, ScrollView, StyleSheet } from "react-native";
+
+// Components
 import Title from "./Title";
-import globalStyles from "../styles/globalStyles";
 import ForcastItem from "./ForcastItem";
+
+// Styles
+import globalStyles from "../styles/globalStyles";
+
 const Forecast = ({ forecast }) => {
   return (
     <View style={globalStyles.container}>

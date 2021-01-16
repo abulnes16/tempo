@@ -1,3 +1,9 @@
+/* Weather component 
+  Renders the current weather section of the app
+  props: 
+   -weather: The current weather of the city
+*/
+
 import React from "react";
 import { View, StyleSheet } from "react-native";
 import Title from "./Title";

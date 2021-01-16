@@ -1,3 +1,9 @@
+/* WeatherItem Component 
+  Renders the current weather data of the city
+  props: 
+    -weather: The current weather data
+*/
+
 import React from "react";
 import { Icon } from "react-native-elements";
 import { View, Text, StyleSheet } from "react-native";

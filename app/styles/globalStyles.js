@@ -1,3 +1,8 @@
+/* Global Stylesheet 
+  Contains the styles that are gonna be reused across 
+  multiple components
+*/
+
 import { StyleSheet } from "react-native";
 
 const globalStyles = StyleSheet.create({

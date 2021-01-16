@@ -1,3 +1,7 @@
+/* Loader component
+  Renders a loading spinner in the center of the app
+*/
+
 import React from "react";
 import { View, StyleSheet, ActivityIndicator } from "react-native";
 import colors from "../constants/colors";

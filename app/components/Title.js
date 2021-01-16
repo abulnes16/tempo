@@ -1,3 +1,6 @@
+/* Title component 
+   Renders a title with default styles
+*/
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 import colors from "../constants/colors";
