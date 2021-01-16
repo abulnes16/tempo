@@ -2,13 +2,13 @@ import React from "react";
 import { Icon } from "react-native-elements";
 import { View, Text, StyleSheet } from "react-native";
 import colors from "../constants/colors";
-import { convertTemperature } from "../modules/helper";
+import { convertTemperature, getIcon } from "../modules/helper";
 
 const WeatherItem = ({ weather }) => {
   return (
     <View style={styles.card}>
       <View style={styles.weatherInfo}>
-        <Icon name="wb-sunny" size={70} color={colors.secondary} />
+        {getIcon(weather.weather[0].main, 70)}
         <Text style={styles.weatherTemperature}>
           {convertTemperature(weather.main.temp)} °C
         </Text>
